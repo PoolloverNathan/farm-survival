@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cape6m60y5m67"]
+
+[ext_resource type="Script" path="res://scripts/Slot.gd" id="1_aqqlo"]
+[ext_resource type="Texture2D" uid="uid://b5dtx6be0ecu0" path="res://gimkit/props/farm/metal_shovel/shovel.png" id="1_ykfxg"]
+
+[node name="Slot" type="PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+theme_type_variation = &"slot_selected"
+script = ExtResource("1_aqqlo")
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_ykfxg")
+expand_mode = 1
+stretch_mode = 5

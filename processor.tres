@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GimkitImageProcessor" load_steps=5 format=3 uid="uid://c2saxt2hr2o1g"]
+
+[ext_resource type="Texture2D" uid="uid://tqw61s1wmopb" path="res://gimkit/tilesets/cinema/fill.png" id="1_se8kl"]
+[ext_resource type="Texture2D" uid="uid://dygraskjp6xhy" path="res://gimkit/tilesets/cinema/mask.png" id="2_7aq1c"]
+[ext_resource type="Texture2D" uid="uid://bengu8ifjlw76" path="res://gimkit/tilesets/cinema/border.png" id="3_8q7jc"]
+[ext_resource type="Script" path="res://scripts/GimkitImage.gd" id="4_bkhnk"]
+
+[resource]
+script = ExtResource("4_bkhnk")
+fill = ExtResource("1_se8kl")
+mask = ExtResource("2_7aq1c")
+outline = ExtResource("3_8q7jc")
+force_rebake = false

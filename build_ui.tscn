@@ -1,0 +1,136 @@
+[gd_scene load_steps=15 format=3 uid="uid://d37bud3x8uggx"]
+
+[ext_resource type="Script" path="res://scripts/UpdateBuildList.gd" id="1_54ns3"]
+[ext_resource type="Texture2D" uid="uid://cu2v7ldnwxeuy" path="res://joined_tileset.png" id="1_egj0x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_envtk"]
+resource_name = "Build0"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 136, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3flqy"]
+resource_name = "Build1"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 408, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i6n3"]
+resource_name = "Build2"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 680, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3tbi"]
+resource_name = "Build3"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 952, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yp4rb"]
+resource_name = "Build4"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 1224, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ypmc"]
+resource_name = "Build5"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 1496, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duwos"]
+resource_name = "Build6"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 1768, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uib5"]
+resource_name = "Build7"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 2040, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ab8s"]
+resource_name = "Build8"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 2312, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgxcj"]
+resource_name = "Build9"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 2584, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y11wd"]
+resource_name = "Build10"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 2856, 136, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37166"]
+resource_name = "Build11"
+atlas = ExtResource("1_egj0x")
+region = Rect2(952, 3128, 136, 136)
+
+[node name="BuildUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JoinedTileset" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-190, 500)
+texture = ExtResource("1_egj0x")
+
+[node name="Build" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 4.0
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_54ns3")
+atlas = ExtResource("1_egj0x")
+interval = Rect2i(0, 0, 1088, 272)
+count = Vector2i(1, 12)
+rect = Rect2i(952, 136, 136, 136)
+
+[node name="Build0" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_envtk")
+
+[node name="Build1" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3flqy")
+
+[node name="Build2" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_3i6n3")
+
+[node name="Build3" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_u3tbi")
+
+[node name="Build4" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_yp4rb")
+
+[node name="Build5" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_4ypmc")
+
+[node name="Build6" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_duwos")
+
+[node name="Build7" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_2uib5")
+
+[node name="Build8" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_0ab8s")
+
+[node name="Build9" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_vgxcj")
+
+[node name="Build10" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_y11wd")
+
+[node name="Build11" type="TextureRect" parent="Build"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_37166")

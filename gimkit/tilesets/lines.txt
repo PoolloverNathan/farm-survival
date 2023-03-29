@@ -1,0 +1,60 @@
+cinema
+Cosmic Flooring
+./cinema/
+./cinema/
+./cinema/
+dirt
+Dirt
+./dirt/27_dirt_
+./dirt/27_dirt_
+./dirt/27_dirt_
+asphalt_road
+Asphalt
+asphalt_road/29_asphalt_road_
+asphalt_road/29_asphalt_road_
+asphalt_road/29_asphalt_road_
+grass
+Grass
+grass/10_grass_
+grass/
+grass/10_grass_
+grass_dry
+Dry Grass
+grass/26_grass_dry_
+grass/
+grass/26_grass_dry_
+water
+Water
+water/01_water_
+water/
+water/01_water_
+concrete
+Concrete
+concrete/
+concrete/
+concrete/
+marble
+Marble
+marble/07_marble_
+marble/
+marble/07_marble_
+speckled_gray
+Speckled Gray Floor
+speckled_gray/28_speckled_gray_
+speckled_gray/28_speckled_gray_
+speckled_gray/28_speckled_gray_
+plastic_blue
+Blue Plastic
+plastic/blue_
+plastic/
+plastic/blue_
+plastic_green
+Green Plastic
+plastic/green_
+plastic/
+plastic/green_
+plastic_red
+Red Plastic
+plastic/red_
+plastic/
+plastic/red_

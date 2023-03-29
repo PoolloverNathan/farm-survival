@@ -1,0 +1,13 @@
+./cinema/fill.png.import
+./dirt/27_dirt_fill.png.import
+./asphalt_road/29_asphalt_road_fill.png.import
+./grass/10_grass_fill.png.import
+./grass/26_grass_dry_fill.png.import
+./water/01_water_fill.png.import
+./concrete/fill.png.import
+./marble/07_marble_fill.png.import
+./scraps/dark_fill.png.import
+./speckled_gray/28_speckled_gray_fill.png.import
+./plastic/blue_fill.png.import
+./plastic/green_fill.png.import
+./plastic/red_fill.png.import

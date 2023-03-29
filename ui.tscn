@@ -1,0 +1,85 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbncimgu17srt"]
+
+[ext_resource type="PackedScene" uid="uid://cape6m60y5m67" path="res://slot.tscn" id="1_k8o07"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="2_qa1ox"]
+
+[sub_resource type="GDScript" id="GDScript_ns0i2"]
+resource_name = "UI"
+script/source = "@tool
+extends Control
+const SlotScene: PackedScene = preload(\"res://slot.tscn\")
+@onready var container = $HBoxContainer
+@export var player: Player:
+	get:
+		return get_node(get(\"metadata/_editor_prop_ptr_player\"))
+	set(value):
+		push_error(\"Do not set Player directly.\")
+
+func _set(prop, val):
+	if prop == \"metadata/_editor_prop_ptr_player\":
+		print(\"setting player pointer\")
+		for child in container.get_children(): child.queue_free()
+		if val and get_node(val):
+			var name: NodePath
+			if val is NodePath:
+				name = \"../../\" + val.get_concatenated_names()
+			else:
+				push_error('\"metadata/_editor_prop_ptr_player\" must be a NodePath.')
+				return
+			for i in 4:
+				var slot: Slot = SlotScene.instantiate()
+				slot.name = \"Slot\" + str(i)
+				slot.set(\"metadata/_editor_prop_ptr_player\", name)
+				container.add_child(slot)
+				slot.owner = self
+	else:
+		super(prop, val)
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="UI" type="Control" node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ns0i2")
+player = NodePath("Player")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Slot0" parent="HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_k8o07")]
+layout_mode = 2
+player = NodePath("../../Player")
+
+[node name="Slot1" parent="HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_k8o07")]
+layout_mode = 2
+player = NodePath("../../Player")
+
+[node name="Slot2" parent="HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_k8o07")]
+layout_mode = 2
+player = NodePath("../../Player")
+
+[node name="Slot3" parent="HBoxContainer" node_paths=PackedStringArray("player") instance=ExtResource("1_k8o07")]
+layout_mode = 2
+player = NodePath("../../Player")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_qa1ox")

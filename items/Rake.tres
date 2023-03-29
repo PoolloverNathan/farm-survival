@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bhdqxpphkoljr"]
+
+[ext_resource type="Script" path="res://scripts/Item.gd" id="1_lajau"]
+[ext_resource type="Texture2D" uid="uid://bfybsf2u2qha0" path="res://gimkit/props/farm/rake/rake.png" id="2_5wnlx"]
+
+[resource]
+script = ExtResource("1_lajau")
+texture = ExtResource("2_5wnlx")
+name = "Rake"
+description = "Allows you to rake leaves into a pile."
+components = Array[null]([])

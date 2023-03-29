@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GimkitImageProcessor" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/plastic/green_fill.png" id="0_fill21772"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/plastic/mask.png" id="1_mask21772"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/plastic/green_border.png" id="2_border21772"]
+[ext_resource type="Script" path="res://scripts/GimkitImage.gd" id="3_script21772"]
+
+[resource]
+resource_name = "Green Plastic"
+script = ExtResource("3_script21772")
+fill = ExtResource("0_fill21772")
+mask = ExtResource("1_mask21772")
+outline = ExtResource("2_border21772")
+force_rebake = true

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GimkitImageProcessor" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/grass/10_grass_fill.png" id="0_fill20227"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/grass/mask.png" id="1_mask20227"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/grass/10_grass_border.png" id="2_border20227"]
+[ext_resource type="Script" path="res://scripts/GimkitImage.gd" id="3_script20227"]
+
+[resource]
+resource_name = "Grass"
+script = ExtResource("3_script20227")
+fill = ExtResource("0_fill20227")
+mask = ExtResource("1_mask20227")
+outline = ExtResource("2_border20227")
+force_rebake = true

@@ -1,0 +1,9 @@
+./cinema/mask.png.import
+./dirt/27_dirt_mask.png.import
+./asphalt_road/29_asphalt_road_mask.png.import
+./grass/mask.png.import
+./water/mask.png.import
+./concrete/mask.png.import
+./marble/mask.png.import
+./speckled_gray/28_speckled_gray_mask.png.import
+./plastic/mask.png.import

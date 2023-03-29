@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bklrt1gy4tdoj"]
+
+[ext_resource type="Script" path="res://scripts/Item.gd" id="1_vqoeg"]
+[ext_resource type="Texture2D" uid="uid://b5dtx6be0ecu0" path="res://gimkit/props/farm/metal_shovel/shovel.png" id="2_8dcqn"]
+
+[resource]
+script = ExtResource("1_vqoeg")
+texture = ExtResource("2_8dcqn")
+name = null
+description = "Click to dig a hole where the shovel head is."
+components = Array[null]([null])

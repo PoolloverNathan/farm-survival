@@ -1,0 +1,160 @@
+[gd_scene load_steps=16 format=3 uid="uid://eijxsug3xft3"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_n5y1c"]
+[ext_resource type="Script" path="res://scripts/ChunkLoader.gd" id="1_vqvgl"]
+[ext_resource type="Script" path="res://scripts/InventoryData.gd" id="2_ndkca"]
+[ext_resource type="Texture2D" uid="uid://yx70ctokh185" path="res://gimkit/characters/skins/default_lightgreen/spritesheet.png" id="2_nus7w"]
+[ext_resource type="Texture2D" uid="uid://c15j3wok8t7yk" path="res://player_lantern.tres" id="5_fvnwu"]
+
+[sub_resource type="Resource" id="Resource_60yoo"]
+script = ExtResource("2_ndkca")
+size = 0
+slot_filters = null
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nu8f"]
+radius = 41.0
+
+[sub_resource type="Animation" id="Animation_2dved"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_2kvac"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_jjn5q"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteSheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5smlu"]
+_data = {
+"RESET": SubResource("Animation_2dved"),
+"idle": SubResource("Animation_2kvac"),
+"walk": SubResource("Animation_jjn5q")
+}
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ihejb"]
+polygon = PackedVector2Array(5, 32, 12, 35, 22, 35, 31, 30, 22, 28, 12, 28)
+
+[sub_resource type="Curve2D" id="Curve2D_vr8g8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 400, 800, 0, 400, 0, -400, 0, 0, 800, 0, 400, 0, -400, -800, 0, -400, 0, 400, 0, 0, -800, 0, -400, 0, 0, 800, 0)
+}
+point_count = 5
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_5nyp8"]
+resource_name = "FearStream"
+
+[sub_resource type="GDScript" id="GDScript_yjh08"]
+resource_name = "FearGenerator"
+script/source = "@tool
+extends AudioStreamPlayer2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	_fill_buffer()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	_fill_buffer()
+
+var phase = 0
+@export var pulse_hz = 15
+@export var hz = 15
+
+func _fill_buffer():
+	if not playing:
+		return
+	var playback = get_stream_playback()
+	if playback:
+		var increment = (1.0 / (hz / pulse_hz))
+
+		var to_fill = playback.get_frames_available()
+		while (to_fill > 0):
+			playback.push_frame( Vector2(1.0,1.0) * sin(phase * (PI * 2.0)))
+			phase = fmod((phase + increment), 1.0)
+			to_fill-=1;
+"
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_n5y1c")
+inventory_data = SubResource("Resource_60yoo")
+
+[node name="SpriteSheet" type="Sprite2D" parent="."]
+texture = ExtResource("2_nus7w")
+vframes = 17
+frame = 12
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="ChunkLoader" type="Node2D" parent="."]
+process_mode = 4
+script = ExtResource("1_vqvgl")
+radius = 800
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 31)
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_0nu8f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5smlu")
+}
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 1)
+occluder = SubResource("OccluderPolygon2D_ihejb")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(-3, 1)
+scale = Vector2(-1, 1)
+occluder = SubResource("OccluderPolygon2D_ihejb")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="OutsideView" type="Path2D" parent="."]
+curve = SubResource("Curve2D_vr8g8")
+
+[node name="Fear" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamGenerator_5nyp8")
+script = SubResource("GDScript_yjh08")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("5_fvnwu")

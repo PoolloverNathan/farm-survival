@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GimkitImageProcessor" load_steps=5 format=3]
+
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/water/01_water_fill.png" id="0_fill19974"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/water/mask.png" id="1_mask19974"]
+[ext_resource type="Texture2D" path="res://gimkit/tilesets/water/01_water_border.png" id="2_border19974"]
+[ext_resource type="Script" path="res://scripts/GimkitImage.gd" id="3_script19974"]
+
+[resource]
+resource_name = "Water"
+script = ExtResource("3_script19974")
+fill = ExtResource("0_fill19974")
+mask = ExtResource("1_mask19974")
+outline = ExtResource("2_border19974")
+force_rebake = true

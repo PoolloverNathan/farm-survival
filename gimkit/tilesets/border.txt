@@ -1,0 +1,13 @@
+./cinema/border.png.import
+./dirt/27_dirt_border.png.import
+./asphalt_road/29_asphalt_road_border.png.import
+./grass/10_grass_border.png.import
+./grass/26_grass_dry_border.png.import
+./water/01_water_border.png.import
+./concrete/border.png.import
+./marble/07_marble_border.png.import
+./scraps/dark_border.png.import
+./speckled_gray/28_speckled_gray_border.png.import
+./plastic/blue_border.png.import
+./plastic/green_border.png.import
+./plastic/red_border.png.import

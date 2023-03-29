@@ -1,0 +1,37 @@
+<svg width="16" height="16" rx="4" ry="4">
+<!--   <rect width="16" height="16" fill="red" mask="url(#both)" /> -->
+  <defs>
+    <mask id="distmask">
+      <circle cx="8" cy="8" r="5" fill="white" />
+    </mask>
+    <mask id="ivs_distmask">
+      <rect width="16" height="16" fill="#fff" />
+      <rect width="16" height="16" fill="#000" mask="url(#distmask)" />
+    </mask>
+    <mask id="pinpoint">
+      <rect width="16" height="16" fill="white" />
+      <circle cx="8" cy="6" r="0.33" fill="black" />
+    </mask>
+  </defs>
+  <rect x="2" y="2" height="5" width="5" fill="#708cea" />
+  <rect x="9" y="2" height="5" width="5" fill="#708cea" />
+  <rect x="2" y="9" height="5" width="5" fill="#708cea" />
+  <rect x="9" y="9" height="5" width="5" fill="#708cea" />
+  <!--<rect x="9" y="9" height="5" width="5" fill="#708cea" mask="url(#unload)" />-->
+<!--   <rect x="9.25" y="9.25" height="4.5" width="4.5" fill="none" stroke-width="0.5" stroke="#708cea" opacity="0.5" /> -->
+  <rect x="2" y="2" height="5" width="5" fill="#a5b7f3" mask="url(#distmask)" />
+  <rect x="9" y="2" height="5" width="5" fill="#a5b7f3" mask="url(#distmask)" />
+  <rect x="2" y="9" height="5" width="5" fill="#a5b7f3" mask="url(#distmask)" />
+  <rect x="9" y="9" height="5" width="5" fill="#a5b7f3" mask="url(#distmask)" />
+<!--   <rect x="9" y="9" height="5" width="5" fill="#a5b7f3" mask="url(#both)" /> -->
+<!--   <rect x="9.25" y="9.25" height="4.5" width="4.5" fill="none" stroke-width="0.5" stroke="#a5b7f3" mask="url(#distmask)" /> -->
+<!--   <rect x="9" y="9" height="5" width="5" fill="#a5b7f3" mask="url(#distmask)" /> -->
+<!--   <g mask="url(#pinpoint)">
+    <path d="m8 8l0.85 -1.5h-1.71z" fill="#ff7070" />
+    <circle r="1" cx="8" cy="6" fill="#fc9c9c" />
+  </g> -->
+  <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+    <path d="m17 10a3 3 0 0 0 -2.9883 2.7774 3 3 0 0 0 -2.0117-.7774 3 3 0 0 0 -3 3 3 3 0 0 0 2 2.8243v2.1757c0 .554.44599 1 1 1h6c.55401 0 1-.446 1-1v-1l3 2v-6l-3 2v-1.7695a3 3 0 0 0 1-2.2305 3 3 0 0 0 -3-3z" fill="#e0e0e0" transform="scale(0.5, 0.5)" stroke="#708cea" />
+  </svg>
+</svg>
+
