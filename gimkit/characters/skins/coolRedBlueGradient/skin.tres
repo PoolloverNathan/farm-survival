@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerSkin" load_steps=4 format=3 uid="uid://b1i565jqcaf2r"]
+
+[ext_resource type="Script" path="res://scripts/PlayerSkin.gd" id="1_5lqqe"]
+[ext_resource type="Texture2D" uid="uid://dqoeucgel8hqu" path="res://gimkit/characters/skins/coolRedBlueGradient/preview.png" id="1_wi31i"]
+[ext_resource type="Texture2D" uid="uid://2mueffmiq2q0" path="res://gimkit/characters/skins/coolRedBlueGradient/spritesheet.png" id="3_kxgck"]
+
+[resource]
+script = ExtResource("1_5lqqe")
+preview = ExtResource("1_wi31i")
+spritesheet = ExtResource("3_kxgck")
+frames = Vector2(6, 3)
+reserved = false

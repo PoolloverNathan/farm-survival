@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerSkin" load_steps=4 format=3 uid="uid://3rf1nqkesc5q"]
+
+[ext_resource type="Texture2D" uid="uid://y1eain5i7dx2" path="res://gimkit/characters/skins/stripeDoubleRed/preview.png" id="1_ggm0f"]
+[ext_resource type="Script" path="res://scripts/PlayerSkin.gd" id="1_tn0do"]
+[ext_resource type="Texture2D" uid="uid://bjowxpaamt7vn" path="res://gimkit/characters/skins/stripeDoubleRed/spritesheet.png" id="3_wagfw"]
+
+[resource]
+script = ExtResource("1_tn0do")
+preview = ExtResource("1_ggm0f")
+spritesheet = ExtResource("3_wagfw")
+frames = Vector2(6, 3)
+reserved = false
