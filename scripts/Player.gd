@@ -30,9 +30,10 @@ func _process(delta):
 	selected_slot = new_slot
 
 func _physics_process(delta):
-	var x = Input.get_axis("west", "east")
-	var y = Input.get_axis("north", "south")
-	velocity = Vector2(x, y) * SPEED
+	if not multiplayer.multiplayer_peer or multiplayer.get_unique_id() == get_multiplayer_authority():
+		var x = Input.get_axis("west", "east")  
+		var y = Input.get_axis("north", "south")
+		velocity = Vector2(x, y) * SPEED
 	move_and_slide()
 	if velocity.x:
 		rotation = 0

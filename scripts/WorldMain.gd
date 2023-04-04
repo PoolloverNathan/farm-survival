@@ -25,3 +25,7 @@ enum DayTime {
 		lantern.gradient.set_color(2, new_lantern_far_color)
 	get:
 		return lantern.gradient.get_color(2)
+
+func _ready():
+	if not Engine.is_editor_hint():
+		add_child(preload("res://player.tscn"))

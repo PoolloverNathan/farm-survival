@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://bv4hb05yigmgo"]
+[gd_scene load_steps=22 format=3 uid="uid://bv4hb05yigmgo"]
 
 [ext_resource type="Script" path="res://scripts/WorldMain.gd" id="1_yjlq4"]
 [ext_resource type="TileSet" uid="uid://500sa8usn45i" path="res://tileset.tres" id="1_ymxep"]
 [ext_resource type="Texture2D" uid="uid://c15j3wok8t7yk" path="res://player_lantern.tres" id="2_51vip"]
 [ext_resource type="Shader" path="res://void_particles.gdshader" id="2_k735d"]
-[ext_resource type="PackedScene" uid="uid://eijxsug3xft3" path="res://player.tscn" id="3_g4apq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c523f"]
 shader = ExtResource("2_k735d")
@@ -224,9 +223,6 @@ position = Vector2(0, 2176)
 amount = 2048
 process_material = SubResource("ShaderMaterial_c523f")
 
-[node name="Player" parent="." instance=ExtResource("3_g4apq")]
-position = Vector2(1509, 1299)
-
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="DayAnim" type="AnimationPlayer" parent="."]
@@ -255,3 +251,7 @@ scale = Vector2(136, 136)
 position = Vector2(16, 0)
 scale = Vector2(0.188, 0.188)
 shape = SubResource("WorldBoundaryShape2D_vusvb")
+
+[node name="Spawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://player.tscn")
+spawn_path = NodePath("..")

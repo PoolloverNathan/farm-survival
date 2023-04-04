@@ -114,6 +114,7 @@ func _fill_buffer():
 motion_mode = 1
 script = ExtResource("1_n5y1c")
 inventory_data = SubResource("Resource_60yoo")
+selected_slot = null
 
 [node name="SpriteSheet" type="Sprite2D" parent="."]
 texture = ExtResource("2_nus7w")
@@ -158,3 +159,5 @@ script = SubResource("GDScript_yjh08")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = ExtResource("5_fvnwu")
+
+[node name="Sync" type="MultiplayerSynchronizer" parent="."]
